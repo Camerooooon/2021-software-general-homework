@@ -7,8 +7,36 @@
 # test scores together then dividing by 3), and then print the student's letter grade 
 # (as well as the average score as a number).
 
+def try_parse_int(str):
+    try:
+        return int(str)
+    except ValueError:
+        print("Failed to parse int: " + str)
+        exit();
 
+inpts = []
 
+print("Enter a number or done to calculate average")
+
+while True:
+    inpt = input()
+
+    if (inpt == "done"):
+        break;
+
+    num = try_parse_int(inpt);
+    inpts.append(num);
+
+print(inpts);
+
+avg = 0
+
+for i in inpts:
+    avg += i
+
+avg = avg / len(inpts)
+
+print (avg)
 
 #########################################################
 
@@ -20,3 +48,5 @@
 
 # Have the user input how much money Gregory has then print how many of each 
 # toy they can afford, as well as how much money they'd have remaining
+
+
