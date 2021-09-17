@@ -48,9 +48,39 @@
 # contains a space is acceptable. So adding ‘the dog’ : ‘Hund’ should fail, but 
 # ‘dog’ : ‘der Hund’ is fine.
 
+#indexes = []
+#dictionary = []
+#
+#
+#while True:
+#    inpt = input("Add index to dictionary or done to finish: ")
+#    if (inpt in " "):
+#        print("STOP You have violated the law, indexes cannot contain spaces");
+#        continue;
+#    if (inpt == "done"):
+#        break;
+#    indexes.append(inpt)
+#    inpt = input("Add value to dictionary")
+#    if inpt in dictionary:
+#        indexes.pop();
+#        print("STOP You have violated the law, duplicate dictionary item try again");
+#        continue;
+#    dictionary.append(inpt)
+#
+#index = 0;
+#for i in indexes:
+#    print(i, dictionary[index]);
+#    index += 1;
+
+################################################
+# Instead of printing out the dictionary when the program is done, ask the user 
+# for a sentence and “translate” it, word-by-word, as output. 
+
+# If a word has no translation, use the word unchanged.
+
+
 indexes = []
 dictionary = []
-
 
 while True:
     inpt = input("Add index to dictionary or done to finish: ")
@@ -72,23 +102,8 @@ for i in indexes:
     print(i, dictionary[index]);
     index += 1;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-################################################
-# Instead of printing out the dictionary when the program is done, ask the user 
-# for a sentence and “translate” it, word-by-word, as output. 
-
-# If a word has no translation, use the word unchanged.
+inpt = input("Translate: ")
+translation = ""
+for word in (inpt.split(" ")):
+    translation = translation + dictionary[indexes.index(word)]
+print("tRanslatiOn: " + translation)
